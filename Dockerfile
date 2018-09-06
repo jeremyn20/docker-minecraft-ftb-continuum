@@ -2,7 +2,7 @@
 
 FROM java:8
 
-MAINTAINER Jayson Reis <santosdosreis@gmail.com>
+MAINTAINER Mattias Kågström <mattias.kagstrom@hotmail.com>
 
 ENV VERSION=1.4.1
 
