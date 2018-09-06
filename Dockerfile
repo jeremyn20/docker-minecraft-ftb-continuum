@@ -4,16 +4,17 @@ FROM java:8
 
 MAINTAINER Jayson Reis <santosdosreis@gmail.com>
 
-ENV VERSION=3.0.6
+ENV VERSION=1.4.1
 
 RUN apt-get update && apt-get install -y wget unzip
 RUN addgroup --gid 1234 minecraft
 RUN adduser --disabled-password --home=/data --uid 1234 --gid 1234 --gecos "minecraft user" minecraft
 
 RUN mkdir /tmp/feed-the-beast && cd /tmp/feed-the-beast && \
-	wget -c https://addons-origin.cursecdn.com/files/2373/70/FTBPresentsSkyfactory3Server_${VERSION}.zip -O FTBInfinityServer.zip && \
-	unzip FTBInfinityServer.zip && \
-	rm FTBInfinityServer.zip && \
+	
+	wget -c https://media.forgecdn.net/files/2582/98/FTBContinuumServer_${VERSION}.zip -O FTBContinuumServer.zip && \
+	unzip FTBContinuumServer.zip && \
+	rm FTBContinuumServer.zip && \
 	bash -x FTBInstall.sh && \
 	chown -R minecraft /tmp/feed-the-beast
 
@@ -30,6 +31,6 @@ WORKDIR /data
 
 CMD /start
 
-ENV MOTD A Minecraft (FTB SkyFactory 3 ${VERSION}) Server Powered by Docker
+ENV MOTD A Minecraft (FTB Continuum Server ${VERSION}) Server Powered by Docker
 ENV LEVEL world
 ENV JVM_OPTS -Xms2048m -Xmx2048m
