@@ -5,7 +5,10 @@ Dockerfile for Minecraft Continuum Server
 
 This docker image provides a Minecraft Server, based on Feed The Beast Continuum.
 
-To simply use the latest stable version, run:
+To specify which Continuum server it downloads during install, set the enviroment variable "DOWNLOADLINK" to the one you want.
+Default is: https://media.forgecdn.net/files/2620/528/FTBContinuumServer_1.5.2.zip
+
+To simply run:
 
     docker run -d -p 25565:25565 mattiaskagstrom/minecraft-ftb-continuum
 
