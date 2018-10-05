@@ -4,7 +4,7 @@ FROM java:8
 
 MAINTAINER Mattias Kågström <mattias.kagstrom@hotmail.com>
 
-ENV VERSION=1.4.1
+ENV DOWNLOADLINK=https://media.forgecdn.net/files/2620/528/FTBContinuumServer_1.5.2.zip
 
 RUN apt-get update && apt-get install -y wget unzip
 RUN addgroup --gid 1234 minecraft
@@ -12,7 +12,7 @@ RUN adduser --disabled-password --home=/data --uid 1234 --gid 1234 --gecos "mine
 
 RUN mkdir /tmp/feed-the-beast && cd /tmp/feed-the-beast && \
 	
-	wget -c https://media.forgecdn.net/files/2582/98/FTBContinuumServer_${VERSION}.zip -O FTBContinuumServer.zip && \
+	wget -c DOWNLOADLINK -O FTBContinuumServer.zip && \
 	unzip FTBContinuumServer.zip && \
 	rm FTBContinuumServer.zip && \
 	bash -x FTBInstall.sh && \
