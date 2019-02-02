@@ -23,14 +23,14 @@ USER minecraft
 
 EXPOSE 25565
 
-ADD start.sh /start
+#ADD start.sh /start
 
 VOLUME /data
-ADD server.properties /tmp/server.properties
+#ADD server.properties /tmp/server.properties
 WORKDIR /data
 
 CMD /start
 
 ENV MOTD A Minecraft (FTB Continuum Server) Server Powered by Docker
 ENV LEVEL world
-ENV JVM_OPTS -Xms2048m -Xmx2048m
+ENV JVM_OPTS -Xms4096m -Xmx4096m
